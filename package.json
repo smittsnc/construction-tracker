@@ -1,0 +1,9 @@
+{
+  "name": "construction-tracker",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@browserbasehq/stagehand": "^1.0.0",
+    "csv-writer": "^1.6.0"
+  }
+}
