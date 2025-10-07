@@ -73,7 +73,7 @@ col1, col2 = st.columns(2)
 # Data Table
 st.subheader("All Projects")
 # Reset index to start at 1 instead of 0
-display_df = df[['project_name', 'customer', 'project_value', 'jobs_created', 
+display_df = df[['project_name', 'customer', 'general_contractor', 'project_value', 'jobs_created', 
                  'city', 'state', 'announcement_date']].copy()
 display_df.index = range(1, len(display_df) + 1)
 
