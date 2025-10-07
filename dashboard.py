@@ -10,6 +10,13 @@ st.set_page_config(page_title="Construction Project Tracker", layout="wide")
 # Initialize database
 db = ProjectDatabase()
 
+# Auto-import initial data on first run
+if len(db.get_all_projects()) == 0 and os.path.exists('initial_projects.csv'):
+    db.import_from_csv('initial_projects.csv')
+
+# Header
+st.title("🏗️ Construction Project Tracker")
+
 # Header
 st.title("🏗️ Construction Project Tracker")
 st.markdown("Track new construction projects across NC, SC, GA, FL, TN, AL, MS, AR, and LA")
