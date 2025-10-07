@@ -102,6 +102,7 @@ with st.expander("View Project Details"):
         st.warning("No projects available. Please import data first.")
     col1, col2 = st.columns(2)
     with col1:
+        project_details = {}
         st.write("**Customer:**", project_details['customer'])
         st.write("**General Contractor:**", project_details['general_contractor'])
         st.write("**Value:**", project_details['project_value'])
