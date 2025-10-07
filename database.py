@@ -7,10 +7,17 @@ class ProjectDatabase:
     def __init__(self, db_path='projects.db'):
         # Check if we should use PostgreSQL
         self.db_url = os.getenv('DATABASE_URL')
+        self.db_path = db_path
         
         if self.db_url:
             # Use PostgreSQL
-            import psycopg2
+            try:
+                import psycopg2
+            except ModuleNotFoundError as exc:
+                raise ModuleNotFoundError(
+                    "psycopg2 is required for DATABASE_URL connections. "
+                    "Install it with 'pip install psycopg2-binary'."
+                ) from exc
             self.conn = psycopg2.connect(self.db_url)
             self.is_postgres = True
         else:
