@@ -100,17 +100,4 @@ with st.expander("View Project Details"):
         st.write("**Article:**", project_details['article_url'])
     else:
         st.warning("No projects available. Please import data first.")
-    col1, col2 = st.columns(2)
-    with col1:
-        project_details = {}
-        st.write("**Customer:**", project_details['customer'])
-        st.write("**General Contractor:**", project_details['general_contractor'])
-        st.write("**Value:**", project_details['project_value'])
-        st.write("**Jobs:**", project_details['jobs_created'])
-    with col2:
-        st.write("**City:**", project_details['city'])
-        st.write("**County:**", project_details['county'])
-        st.write("**State:**", project_details['state'])
-        st.write("**Date:**", project_details['announcement_date'])
     
-    st.write("**Article:**", project_details['article_url'])
