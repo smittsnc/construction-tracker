@@ -1,14 +1,69 @@
 Project Name,Customer,General Contractor,Announcement Date,Project Value,Jobs Created,City,County,State,Article URL
-JetZero Production Facility,JetZero,Siemens,June 12 2025,$4.7 billion,14500,Greensboro,Guilford County,North Carolina,https://edpnc.com/news/jetzero-production-facility
-Amazon AI Infrastructure,Amazon Web Services,,June 4 2025,$10 billion,500,,Richmond County,North Carolina,https://edpnc.com/news/amazon-ai-infrastructure
-First US Manufacturing Facility,Zhejiang Kingsun Eco-Pacl Ltd,,July 22 2025,$80.5 million,515,Robbinsville,Graham County,North Carolina,https://edpnc.com/news/kingsun-manufacturing
-ZF Chassis Systems Expansion,ZF Chassis Systems Duncan,,September 23 2025,$55.4 million,,,Spartanburg County,South Carolina,https://www.sccommerce.com/news/zf-chassis-expansion
-Woodward Manufacturing Site,Woodward Inc,,September 16 2025,$200 million,275,,Spartanburg County,South Carolina,https://www.sccommerce.com/news/woodward-manufacturing
-New Manufacturing Facility,Underwood Ammo,,October 1 2025,$41 million,120,,,Georgia,https://georgia.org/press-releases/underwood-ammo
-Alabama River Cellulose Mill,Georgia-Pacific,,4 weeks ago,$800 million,,Perdue Hill,Monroe County,Alabama,https://www.madeinalabama.com/news/georgia-pacific-mill
-Jabil Facility,Jabil,,September 25 2025,$70 million,24,Jackson,Marshall County,Mississippi,https://mississippi.org/news/jabil-facility
-Google Data Center,Google,,October 2 2025,Multi-billion,Hundreds of operations + thousands construction,West Memphis,,Arkansas,https://www.arkansasedc.com/news-events/newsroom/google-data-center
-World's Largest Ammonia Facility,CF Industries JERA Mitsui,,April 8 2025,$4 billion,414,Donaldsonville,Ascension Parish,Louisiana,https://www.opportunitylouisiana.gov/news/cf-industries-ammonia
-I-75 Highway Infrastructure,Florida DOT,Lane Construction,August 14 2025,$238 million,,Ocala,Marion County,Florida,https://www.constructiondive.com/news/i75-highway-infrastructure
+JetZero Production Facility,JetZero,Siemens,June 12 2025,$4.7 billion,14500,Greensboro,Guilford County,North Carolina,https://edpnc.com/news/
+Amazon AI Infrastructure,Amazon Web Services,,June 4 2025,$10 billion,500,,Richmond County,North Carolina,https://edpnc.com/news/
+First US Manufacturing Facility,Zhejiang Kingsun Eco-Pacl Ltd,,July 22 2025,$80.5 million,515,Robbinsville,Graham County,North Carolina,https://edpnc.com/news/
+ZF Chassis Systems Expansion,ZF Chassis Systems Duncan,,September 23 2025,$55.4 million,,,Spartanburg County,South Carolina,https://www.sccommerce.com/news
+Woodward Manufacturing Site,Woodward Inc,,September 16 2025,$200 million,275,,Spartanburg County,South Carolina,https://www.sccommerce.com/news
+New Manufacturing Facility,Underwood Ammo,,October 1 2025,$41 million,120,,,Georgia,https://georgia.org/press-releases
+Alabama River Cellulose Mill,Georgia-Pacific,,4 weeks ago,$800 million,,Perdue Hill,Monroe County,Alabama,https://www.madeinalabama.com/news/
+Jabil Facility,Jabil,,September 25 2025,$70 million,24,Jackson,Marshall County,Mississippi,https://mississippi.org/news/
+Google Data Center,Google,,October 2 2025,Multi-billion,Hundreds of operations + thousands construction,West Memphis,,Arkansas,https://www.arkansasedc.com/news-events/newsroom
+World's Largest Ammonia Facility,CF Industries JERA Mitsui,,April 8 2025,$4 billion,414,Donaldsonville,Ascension Parish,Louisiana,https://www.opportunitylouisiana.gov/news
+I-75 Highway Infrastructure,Florida DOT,Lane Construction,August 14 2025,$238 million,,Ocala,Marion County,Florida,https://www.constructiondive.com
 Hostess Plant Expansion,JM Smucker,,October 6 2025,$120 million,48,Columbus,,Georgia,https://www.constructiondive.com/news/hostess-plant-construction-georgia-factory/802015/
-Memphis Medical Center,Regional One Health,Turner Flintco Nickson Fifer JV,October 2 2025,$1 billion,,Memphis,Shelby County,Tennessee,https://www.constructiondive.com/news/memphis-medical-center
+Memphis Medical Center,Regional One Health,Turner Flintco Nickson Fifer JV,October 2 2025,$1 billion,,Memphis,Shelby County,Tennessee,https://www.constructiondive.com
+Hitachi Energy Expansion,Hitachi Energy,,August 21 2025,$97 million,100,Alamo,Crockett County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+Ford BlueOval City Production Delay,Ford,,August 11 2025,Multi-billion (delayed),0,Stanton,Haywood County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+BuildEx Modular-Tennessee,BuildEx Modular,,August 7 2025,$23.3 million,110,Fayetteville,Lincoln County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+Vibrant Health Products,Vibrant Health Products,,July 28 2025,$48.5 million,394,Rossville,Fayette County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+Uranium Enrichment Facility,Various,,July 23 2025,$4.5 billion,Not specified,Oak Ridge,Anderson County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+Hyosung HICO Expansion,Hyosung HICO,,May 15 2025,$51 million,123,Memphis,Shelby County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+Benton County Industrial Site,Various,,February 3 2025,Not specified,Not specified,Various,Benton County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+Ford BlueOval City Good Neighbor Plan,Ford,,January 24 2025,$9 million,Not specified,Stanton,Haywood County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+Brownsville Industrial Plot,Various,,January 13 2025,Not specified,Not specified,Brownsville,Haywood County,Tennessee,https://tennesseelookout.com/category/working-the-economy/
+Meta Montgomery Data Center Expansion,Meta,,September 2025,$1.5 billion,1600 construction + 100 operational,Montgomery,Montgomery County,Alabama,https://www.madeinalabama.com/news/
+Owens Corning Shingle Manufacturing Facility,Owens Corning,,September 2025,$4.9 million (state incentive),100,Prattville,Autauga County,Alabama,https://www.madeinalabama.com/news/
+Georgia-Pacific Alabama River Cellulose Mill,Georgia-Pacific,,September 2025,$800 million,Not specified,Perdue Hill,Monroe County,Alabama,https://www.madeinalabama.com/news/
+Master Boat Builders Expansion,Master Boat Builders,,August 25 2025,$7.8 million,Not specified,Various,Various,Alabama,https://www.madeinalabama.com/news/
+Loftis Steel & Aluminum,Loftis Steel & Aluminum,,August 25 2025,Not specified,20,Decatur,Morgan County,Alabama,https://www.madeinalabama.com/news/
+CFM Facility,CFM,,August 6 2025,$7 million,Not specified,Heflin,Cleburne County,Alabama,https://www.madeinalabama.com/news/
+ArcelorMittal Electrical Steel Mill,ArcelorMittal,,February 6 2025,$1.2 billion,Not specified,Various,Various,Alabama,https://www.madeinalabama.com/news/
+Alabama Port Authority Montgomery Rail Facility,Alabama Port Authority,,February 27 2025,Not specified,Not specified,Montgomery,Montgomery County,Alabama,https://www.madeinalabama.com/news/
+Woodside LNG Facility,Woodside Energy,,"April 28, 2025",$17.5 Billion,,LAKE CHARLES,Calcasieu Parish,Louisiana,https://www.opportunitylouisiana.gov/news/historic-investment-woodside-energy-announces-17-5-billion-final-investment-decision-for-lng-facility-in-southwest-louisiana-becomes-largest-foreign-direct-investment-in-state-history
+CF Industries Ammonia Facility,"CF Industries, JERA and Mitsui",,"April 8, 2025",$4 Billion,,DONALDSONVILLE,Ascension Parish,Louisiana,https://www.opportunitylouisiana.gov/news/another-louisiana-win-cf-industries-jera-and-mitsui-announce-4-billion-final-investment-decision-to-construct-worlds-largest-ammonia-facility-in-ascension-parish
+Hyundai Steel Mill,Hyundai Motor Group,,"March 24, 2025",$5.8 Billion,,,,Louisiana,https://www.opportunitylouisiana.gov/news/louisiana-wins-again-governor-jeff-landry-led-secure-5-8-billion-hyundai-steel-mill
+ExxonMobil Facility Upgrade,ExxonMobil,,"March 27, 2025",$100 million,,BATON ROUGE,East Baton Rouge Parish,Louisiana,https://www.opportunitylouisiana.gov/news/louisiana-to-play-pivotal-role-in-tech-supply-chain-with-exxonmobil-facility-upgrade
+MMR Lafayette Assembly Facility,MMR Group,,"October 6, 2025",$55.2 Million,500,Lafayette,Lafayette Parish,Louisiana,https://www.opportunitylouisiana.gov/news/mmr-group-expands-louisiana-footprint-with-55-2-million-investment-in-lafayette-to-serve-growing-tech-markets
+DMR Drone Manufacturing Facility,DMR Technologies,,"October 2, 2025",,"1,200",Lafayette,Lafayette Parish,Louisiana,https://www.opportunitylouisiana.gov/news/dmr-technologies-to-launch-full-scale-u-s-drone-manufacturing-facility-in-lafayette
+VRC Air Force Maintenance Facility,VRC Metal Systems,,"September 18, 2025",$1.56 Million,46,,,Louisiana,https://www.opportunitylouisiana.gov/news/vrc-metal-systems-announces-1-56-million-investment-in-cutting-edge-air-force-maintenance-facility
+Noble Plastics Expansion,Noble Plastics,,"September 9, 2025",$8.5 Million,29,,,Louisiana,https://www.opportunitylouisiana.gov/news/noble-plastics-announces-8-5-million-expansion-in-acadiana-to-build-local-supply-chain-for-first-solar
+SNT Manufacturing Facility,SNT,,"August 28, 2025",,700,,,Louisiana,https://www.opportunitylouisiana.gov/news/snt-selects-louisiana-for-first-u-s-consolidated-manufacturing-facility
+Radiance Microchip Facility,Radiance Technologies,,"August 25, 2025",$370 Million,150,,,Louisiana,https://www.opportunitylouisiana.gov/news/radiance-technologies-announces-370-million-microchip-facility-in-north-louisiana-to-bolster-and-secure-national-supply-chains
+Underwood Ammo,Underwood Ammo,Not announced,October 1 2025,$41 million,120,,Effingham County,Georgia,https://georgia.org/press-releases/underwood-ammo-to-create-120-new-manufacturing-jobs
+Korean Magnet Facility,JS Link America Inc.,Not announced,September 3 2025,$223 million,520,Columbus,Muscogee County,Georgia,https://georgia.org/press-releases/korean-magnet-facility-to-create-more-than-500-jobs-in-columbus
+EnergyTek Corporation,EnergyTek Corporation,Not announced,August 29 2025,$275 million,1300,Moultrie,Colquitt County,Georgia,https://georgia.org/press-releases/energytek-corporation-selects-colquitt-county
+stow Group,stow Group,Not announced,August 21 2025,$36 million,200,,Gordon County,Georgia,https://georgia.org/press-releases/stow-group-to-create-200-jobs-in-gordon-county
+Pilgrim's Prepared Foods Facility,Pilgrim's,Not announced,July 24 2025,$400 million,630,LaFayette,Walker County,Georgia,https://georgia.org/press-releases/pilgrims-to-build-new-prepared-foods-facility-creating-630-new-jobs-in-walker-county
+King's Hawaiian Expansion,King's Hawaiian,Not announced,July 17 2025,$54 million,135,Oakwood,Hall County,Georgia,https://georgia.org/press-releases/kings-hawaiian-to-invest-54-million-in-hall-county-expansion
+Lane Florida Road Overhaul,,Lane Construction,April 14 2025,$97.5 million,,,,Florida,https://www.constructiondive.com/news/lane-delivers-975m-florida-road-overhaul/
+Barton Malow Orlando Stadium Addition,,Barton Malow,August 21 2025,,,Orlando,,Florida,https://www.constructiondive.com/news/barton-malow-tops-out-orlando-college-football-stadium-addition/
+Lane Construction Highway Job,,Lane Construction,August 14 2025,$238 million,,,,Florida,https://www.constructiondive.com/news/lane-construction-picks-up-238m-highway-job-in-florida/
+Miami Transit-Oriented Project,,,February 26 2025,$1 billion,,Miami,,Florida,https://www.constructiondive.com/news/miami-developer-breaks-ground-on-1b-transit-oriented-project/
+Smurfit Westrock Expansion,Smurfit Westrock,TBD,October 2 2025,$19.3M,,Saltillo,Lee County,Mississippi,https://mda.ms.gov/news/2025/smurfit-westrock-expanding-production-capacity-in-lee-county/
+Jabil New Facility,Jabil,TBD,September 25 2025,$70M,24,,Marshall County,Mississippi,https://mda.ms.gov/news/2025/jabil-to-open-facility-in-marshall-county/
+Hood Industries Expansion,Hood Industries,TBD,September 3 2025,$245M,,Waynesboro,Wayne County,Mississippi,https://mda.ms.gov/news/2025/hood-industries-expanding-operations-in-waynesboro/
+AVAIO Digital Data Center,AVAIO Digital,TBD,August 19 2025,$6B,60+,Brandon,Rankin County,Mississippi,https://mda.ms.gov/news/2025/avaio-digital-to-locate-6-billion-data-center-campus-in-rankin-county/
+Mancuso Chemicals New Plant,Mancuso Chemicals Limited,TBD,August 4 2025,$5.52M,17,Pachuta,Clarke County,Mississippi,https://mda.ms.gov/news/2025/mancuso-chemicals-limited-establishing-operations-in-clarke-county/
+Howard Industries Expansion,Howard Industries,TBD,June 26 2025,$236.95M,450,,Clarke Jones and Simpson counties,Mississippi,https://mda.ms.gov/news/2025/howard-industries-investing-236-million-in-clarke-jones-and-simpson-counties/
+Modine Expansion,Modine,TBD,May 19 2025,$38M,450+,Grenada,Grenada County,Mississippi,https://mda.ms.gov/news/2025/modine-expanding-operations-in-grenada/
+Amazon New Facility,Amazon,TBD,April 22 2025,,"1,000",,Marshall County,Mississippi,https://mda.ms.gov/news/2025/amazon-locating-inbound-cross-dock-operations-in-marshall-county/
+GE Aerospace Expansion,GE Aerospace,TBD,April 16 2025,$11M,100,Batesville,Panola County,Mississippi,https://mda.ms.gov/news/2025/ge-aerospace-growing-manufacturing-capacity-in-panola-county/
+ABB Expansion,ABB,TBD,April 14 2025,$40M,122,Senatobia,,Mississippi,https://mda.ms.gov/news/2025/abb-expanding-operations-in-senatobia/
+Vicksburg Shipyard New Facility,Vicksburg Shipyard,TBD,March 27 2025,$26M,44,Vicksburg,Warren County,Mississippi,https://mda.ms.gov/news/2025/vicksburg-shipyard-locating-operations-in-warren-county/
+Ergon Refining Expansion,Ergon Refining,TBD,March 25 2025,$400M,,Vicksburg,,Mississippi,https://mda.ms.gov/news/2025/ergon-refining-expanding-and-optimizing-operations-in-vicksburg/
+Fabricators Supply Expansion,Fabricators Supply,TBD,March 4 2025,$2.675M,15,West Point,,Mississippi,https://mda.ms.gov/news/2025/fabricators-supply-expanding-operations-in-west-point/
+Camgian Corporation Expansion,Camgian Corporation,TBD,February 25 2025,$2.5M,15,Starkville,,Mississippi,https://mda.ms.gov/news/2025/camgian-corporation-expanding-operations-in-starkville/
+ROCKWOOL Expansion,ROCKWOOL,TBD,February 19 2025,$100M+,30,,Marshall County,Mississippi,https://mda.ms.gov/news/2025/rockwool-expanding-operations-in-marshall-county/
+Southeastern Timber Products New Plant,Southeastern Timber Products,TBD,February 3 2025,$123.4M,40,Ackerman,Choctaw County,Mississippi,https://mda.ms.gov/news/2025/southeastern-timber-products-investing-more-than-120-million-in-choctaw-county/
+Yancey Engineered Solutions New Facility,Yancey Engineered Solutions,TBD,January 28 2025,$20.8M,250,Batesville,Panola County,Mississippi,https://mda.ms.gov/news/2025/yancey-engineered-solutions-locating-operations-in-panola-county/
+Compass Datacenters Project,Compass Datacenters,TBD,January 9 2025,$10B,Thousands,Meridian,Lauderdale County,Mississippi,https://mda.ms.gov/news/2025/compass-datacenters-project-generates-10-billion-investment-in-lauderdale-county/
