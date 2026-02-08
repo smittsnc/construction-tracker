@@ -68,7 +68,7 @@ try {
         const projectData = await stagehand.page.extract({
           instruction: "Extract construction project details",
           schema: z.object({
-            projectName: z.string().optional(),
+            projectName: z.string(),
             customer: z.string().optional(),
             generalContractor: z.string().optional(),
             announcementDate: z.string().optional(),
@@ -80,11 +80,15 @@ try {
           })
         });
 
-        projects.push({
-          ...projectData,
-          articleUrl: article.url,
-          source: site.name
-        });
+  if (projectData.projectName && projectData.projectName.trim()) {
+    projects.push({
+      ...projectData,
+      articleUrl: article.url,
+      source: site.name
+    });
+  } else {
+    console.log("Skipping project with empty name from " + article.url);
+  }
       } catch (err) {
         console.log(`⚠️ Error extracting ${article.title}: ${err.message}`);
       }
