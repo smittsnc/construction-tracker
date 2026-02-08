@@ -76,6 +76,7 @@ st.subheader("All Projects")
 display_df = df[['project_name', 'customer', 'general_contractor', 'project_value', 'jobs_created', 
                  'city', 'state', 'announcement_date']].copy()
 display_df.index = range(1, len(display_df) + 1)
+display_df.columns = ['Project Name', 'Customer', 'General Contractor', 'Project Value', 'Jobs Created', 'City', 'State', 'Announcement Date']
 
 st.dataframe(
     display_df,
