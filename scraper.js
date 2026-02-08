@@ -89,11 +89,8 @@ try {
     }
 
     return projects;
-  } catch (err) {
-    console.log(`❌ Error scraping ${site.name}: ${err.message}`);
-    return [];
-  }
 }
+
 
 async function saveToCSV(projects) {
   // FIXED: Check if projects array is empty
