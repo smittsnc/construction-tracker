@@ -1,4 +1,4 @@
-import { Stagehand } from "@browserbasehq/stagehand";
+import { LLMClient, Stagehand } from "@browserbasehq/stagehand";
 import { createObjectCsvWriter } from "csv-writer";
 import fs from "fs";
 import { z } from "zod";
@@ -150,6 +150,10 @@ async function main() {
   try {
     stagehand = new Stagehand({
       apiKey: process.env.BROWSERBASE_API_KEY,
+      LLMClient: {
+        apiKey: process.env.OPENAI_API_KEY,
+    model: "gpt-4o-mini"
+      },
       verbose: true,
       headless: true
     });
