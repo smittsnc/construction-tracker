@@ -127,7 +127,8 @@ async function main() {
   try {
     stagehand = new Stagehand({
       apiKey: process.env.BROWSERBASE_API_KEY,
-      verbose: true
+      verbose: true,
+      headless: true
     });
 
     await stagehand.init();
