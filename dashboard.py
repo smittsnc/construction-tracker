@@ -28,8 +28,8 @@ if st.sidebar.button("🔄 Run Scraper"):
             st.sidebar.success("✅ Scraper completed!")
             
             # Import new data
-            if os.path.exists('projects_final.csv'):
-                db.import_from_csv('projects_final.csv')
+            if os.path.exists('projects.csv'):
+                db.import_from_csv('projects.csv')
                 st.sidebar.success("✅ Data imported to database")
         except Exception as e:
             st.sidebar.error(f"❌ Error: {e}")
