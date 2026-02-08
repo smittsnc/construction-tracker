@@ -38,11 +38,13 @@ try {
     // Extract article links - FIXED: Use proper Zod schema
     const articles = await stagehand.page.extract({
       instruction: `Extract all construction project announcement article titles and links ${dateRange}`,
-      schema: z.array(z.object({
-        title: z.string().optional(),
-        url: z.string().optional(),
-        date: z.string().optional()
-      }))
+  schema: z.object({
+    articles: z.array(z.object({
+      title: z.string(),
+      url: z.string(),
+      date: z.string()
+  }))
+})
     });
 
     console.log(`✅ Found ${articles?.length || 0} articles`);
@@ -50,7 +52,7 @@ try {
     const projects = [];
 
     // Visit each article and extract project details
-    for (const article of articles || []) {
+    for (const article of articles?.articles || []) {
       try {
         // FIXED: Validate URL exists before navigating
         if (!article.url) {
