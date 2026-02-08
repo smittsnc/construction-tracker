@@ -18,8 +18,16 @@ const websites = [
 async function scrapeWebsite(stagehand, site) {
   console.log(`\n🔍 Scraping ${site.name}...`);
 
+try {
+  await stagehand.page.goto(site.url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+} catch (navError) {
+  console.log(`⚠️  Navigation error for ${site.url}, trying with networkidle...`);
   try {
-    await stagehand.page.goto(site.url);
+    await stagehand.page.goto(site.url, { waitUntil: 'networkidle', timeout: 30000 });
+  } catch (retryError) {
+    console.log(`⚠️  Retry failed, continuing anyway...`);
+  }
+}
     await stagehand.page.waitForTimeout(3000);
 
     // Calculate date range for last 6 months
@@ -89,10 +97,28 @@ async function scrapeWebsite(stagehand, site) {
 
 async function saveToCSV(projects) {
   // FIXED: Check if projects array is empty
-  if (!projects || projects.length === 0) {
-    console.log(`\n⚠️ No projects to save`);
-    return;
-  }
+if (!projects || projects.length === 0) {
+  console.log('\n🚫 No projects to save, creating empty CSV');
+  // Create empty CSV with headers only
+  const csvWriter = createObjectCsvWriter({
+    path: 'projects.csv',
+    header: [
+      { id: 'projectName', title: 'project_name' },
+      { id: 'customer', title: 'customer' },
+      { id: 'generalContractor', title: 'general_contractor' },
+      { id: 'announcementDate', title: 'announcement_date' },
+      { id: 'projectValue', title: 'project_value' },
+      { id: 'jobsCreated', title: 'jobs_created' },
+      { id: 'city', title: 'city' },
+      { id: 'county', title: 'county' },
+      { id: 'state', title: 'state' },
+      { id: 'articleUrl', title: 'article_url' },
+      { id: 'source', title: 'source' }
+    ]
+  });
+  await csvWriter.writeRecords([]);
+  return;
+}
 
   try {
     const csvWriter = createObjectCsvWriter({
