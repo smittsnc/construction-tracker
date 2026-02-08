@@ -36,7 +36,7 @@ try {
     const dateRange = `from ${sixMonthsAgo.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })} to ${today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
 
     // Extract article links - FIXED: Use proper Zod schema
-    const articles = await stagehand.extract({
+    const articles = await stagehand.page.extract({
       instruction: `Extract all construction project announcement article titles and links ${dateRange}`,
       schema: z.array(z.object({
         title: z.string().optional(),
@@ -63,7 +63,7 @@ try {
         await stagehand.page.waitForTimeout(2000);
 
         // FIXED: Use proper Zod schema
-        const projectData = await stagehand.extract({
+        const projectData = await stagehand.page.extract({
           instruction: "Extract construction project details",
           schema: z.object({
             projectName: z.string().optional(),
