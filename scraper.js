@@ -1,24 +1,7 @@
-// Calculate date range for last 6 months
-const today = new Date();
-const sixMonthsAgo = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
-const dateRange = `from ${sixMonthsAgo.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })} to ${today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
-
-// Then use it in the extraction:
-const articles = await stagehand.extract({
-  instruction: `Extract all construction project announcement article titles and links ${dateRange}`,
-  schema: {
-    articles: [{
-      title: "string",
-      url: "string",
-      date: "string"
-    }]
-  }
-});
-Here's the complete updated scraper.js:
-
 import { Stagehand } from "@browserbasehq/stagehand";
 import { createObjectCsvWriter } from "csv-writer";
 import fs from "fs";
+import { z } from "zod";
 
 const websites = [
   { name: "NC", url: "https://ednc.com/news/" },
@@ -44,42 +27,47 @@ async function scrapeWebsite(stagehand, site) {
     const sixMonthsAgo = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
     const dateRange = `from ${sixMonthsAgo.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })} to ${today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
 
-    // Extract article links
+    // Extract article links - FIXED: Use proper Zod schema
     const articles = await stagehand.extract({
       instruction: `Extract all construction project announcement article titles and links ${dateRange}`,
-      schema: {
-        articles: [{
-          title: "string",
-          url: "string",
-          date: "string"
-        }]
-      }
+      schema: z.array(z.object({
+        title: z.string().optional(),
+        url: z.string().optional(),
+        date: z.string().optional()
+      }))
     });
 
-    console.log(`✅ Found ${articles.articles?.length || 0} articles`);
+    console.log(`✅ Found ${articles?.length || 0} articles`);
 
     const projects = [];
 
     // Visit each article and extract project details
-    for (const article of articles.articles || []) {
+    for (const article of articles || []) {
       try {
+        // FIXED: Validate URL exists before navigating
+        if (!article.url) {
+          console.log(`⚠️ Skipping article with no URL: ${article.title}`);
+          continue;
+        }
+
         console.log(`📄 Extracting: ${article.title}`);
         await stagehand.page.goto(article.url);
         await stagehand.page.waitForTimeout(2000);
 
+        // FIXED: Use proper Zod schema
         const projectData = await stagehand.extract({
           instruction: "Extract construction project details",
-          schema: {
-            projectName: "string",
-            customer: "string",
-            generalContractor: "string",
-            announcementDate: "string",
-            projectValue: "string",
-            jobsCreated: "string",
-            city: "string",
-            county: "string",
-            state: "string"
-          }
+          schema: z.object({
+            projectName: z.string().optional(),
+            customer: z.string().optional(),
+            generalContractor: z.string().optional(),
+            announcementDate: z.string().optional(),
+            projectValue: z.string().optional(),
+            jobsCreated: z.string().optional(),
+            city: z.string().optional(),
+            county: z.string().optional(),
+            state: z.string().optional()
+          })
         });
 
         projects.push({
@@ -100,86 +88,71 @@ async function scrapeWebsite(stagehand, site) {
 }
 
 async function saveToCSV(projects) {
-  const csvWriter = createObjectCsvWriter({
-    path: "projects.csv",
-    header: [
-      { id: "projectName", title: "project_name" },
-      { id: "customer", title: "customer" },
-      { id: "generalContractor", title: "general_contractor" },
-      { id: "announcementDate", title: "announcement_date" },
-      { id: "projectValue", title: "project_value" },
-      { id: "jobsCreated", title: "jobs_created" },
-      { id: "city", title: "city" },
-      { id: "county", title: "county" },
-      { id: "state", title: "state" },
-      { id: "articleUrl", title: "article_url" },
-      { id: "source", title: "source" }
-    ]
-  });
+  // FIXED: Check if projects array is empty
+  if (!projects || projects.length === 0) {
+    console.log(`\n⚠️ No projects to save`);
+    return;
+  }
 
-  await csvWriter.writeRecords(projects);
-  console.log(`\n✅ Saved ${projects.length} projects to projects.csv`);
+  try {
+    const csvWriter = createObjectCsvWriter({
+      path: "projects.csv",
+      header: [
+        { id: "projectName", title: "project_name" },
+        { id: "customer", title: "customer" },
+        { id: "generalContractor", title: "general_contractor" },
+        { id: "announcementDate", title: "announcement_date" },
+        { id: "projectValue", title: "project_value" },
+        { id: "jobsCreated", title: "jobs_created" },
+        { id: "city", title: "city" },
+        { id: "county", title: "county" },
+        { id: "state", title: "state" },
+        { id: "articleUrl", title: "article_url" },
+        { id: "source", title: "source" }
+      ]
+    });
+
+    await csvWriter.writeRecords(projects);
+    console.log(`\n✅ Saved ${projects.length} projects to projects.csv`);
+  } catch (err) {
+    console.error(`❌ Error saving to CSV: ${err.message}`);
+  }
 }
 
 async function main() {
   console.log("🚀 Starting Construction Project Scraper...");
   
-  const stagehand = new Stagehand({
-    apiKey: process.env.BROWSERBASE_API_KEY,
-    verbose: true
-  });
+  // FIXED: Add error handling for initialization
+  let stagehand;
+  try {
+    stagehand = new Stagehand({
+      apiKey: process.env.BROWSERBASE_API_KEY,
+      verbose: true
+    });
 
-  await stagehand.init();
+    await stagehand.init();
+  } catch (err) {
+    console.error(`❌ Failed to initialize Stagehand: ${err.message}`);
+    process.exit(1);
+  }
 
   let allProjects = [];
 
-  for (const site of websites) {
-    const projects = await scrapeWebsite(stagehand, site);
-    allProjects = allProjects.concat(projects);
-  }
+  try {
+    for (const site of websites) {
+      const projects = await scrapeWebsite(stagehand, site);
+      allProjects = allProjects.concat(projects);
+    }
 
-  await saveToCSV(allProjects);
-  await stagehand.close();
+    await saveToCSV(allProjects);
+  } finally {
+    await stagehand.close();
+  }
 
   console.log("\n✨ Scraper completed!");
 }
 
-main();
-2. GitHub Actions Workflow (runs weekly)
-Create a new file: .github/workflows/scraper.yml
-
-name: Weekly Construction Scraper
-
-on:
-  schedule:
-    - cron: '0 0 * * 0'  # Runs every Sunday at midnight UTC
-  workflow_dispatch:     # Allows manual trigger from GitHub UI
-
-jobs:
-  scrape:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Run scraper
-        env:
-          BROWSERBASE_API_KEY: ${{ secrets.BROWSERBASE_API_KEY }}
-        run: node scraper.js
-      
-      - name: Commit and push results
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add projects.csv
-          git commit -m "Update construction projects - $(date)" || echo "No changes to commit"
-          git push
+main().catch(err => {
+  console.error(`❌ Fatal error: ${err.message}`);
+  process.exit(1);
+});
